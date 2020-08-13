@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Tip Calculator</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="tip.css">
+</head>
+<body>
+  
+  <main>
+    <h1>Tip Calculator</h1>
+    <div>
+	
+	 <label>Bill Amount</label>
+	 <input type="text" name="" id="bill_amount">
+	 <br>
+	 <label>Tip perc</label>
+	 <input type="text" name="" id="tip_perc">
+	 <br>
+	 <label>Tip Amount</label>
+	 <input type="text" name="" id="tip_total" disabled>
+	 <br>
+	 <label>Total billed</label>
+	 <input type="text" name="" id="total_billed" disabled>
+	 <br>
+	 <button onclick="tipcalcy()"> calculate </button>
+	</div>
+  </main>
+
+<script>
+  const tipcalcy =() =>{
+    let amount = document.getElementById('bill_amount').value;
+     
+	 let perc = document.getElementById('tip_perc').value;
+	 
+	 let tip = amount * (perc/100);
+	 alert(tip);
+	 
+	 let total = tip + Number(amount);
+	   alert(total);    
+ 
+    document.getElementById('tip_total').value = tip;
+
+    document.getElementById('total_billed').value = total;	
+  }
+</script>
+</body>
+</html>
